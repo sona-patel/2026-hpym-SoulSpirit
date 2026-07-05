@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soul Spiritz</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="glow"></div>
+
+<main id="app">
+
+  <!-- SCREEN 1: LANGUAGE SELECT -->
+  <section class="screen active" id="screen-lang">
+     <!-- Symbol below -->
+    <!-- <div class="mark">卐 <span class="mark-line"></span></div> -->
+    <h1 class="title">Soul Spirit <span class="title-sub">36 seconds to spark the soul </span></h1>
+    <p class="subtitle">- - -<br>Choose your language to begin.</p>
+    <div class="lang-choices">
+      <button class="lang-btn" data-lang="en">
+        <span class="lang-name">English</span>
+        <span class="lang-hint">Play in English</span>
+      </button>
+      <button class="lang-btn" data-lang="gu">
+        <span class="lang-name">ગુજરાતી</span>
+        <span class="lang-hint">ગુજરાતીમાં રમો</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- SCREEN 2: PLAYER NAMES -->
+  <section class="screen" id="screen-names">
+    <h2 class="title small" data-i18n="namesTitle">Who's playing?</h2>
+    <p class="subtitle" data-i18n="namesSubtitle">Name each seeker. First to answer right, scores higher.</p>
+    <form id="names-form" class="names-form">
+      <label class="name-field">
+        <span class="player-tag p1">P1</span>
+        <input type="text" id="p1-name" maxlength="16" placeholder="Player One" data-i18n-placeholder="p1Placeholder">
+      </label>
+      <label class="name-field">
+        <span class="player-tag p2">P2</span>
+        <input type="text" id="p2-name" maxlength="16" placeholder="Player Two" data-i18n-placeholder="p2Placeholder">
+      </label>
+      <button type="submit" class="primary-btn" data-i18n="beginBtn">Begin Round →</button>
+    </form>
+    <button class="ghost-btn" id="back-to-lang" data-i18n="changeLang">← change language</button>
+  </section>
+
+  <!-- SCREEN 3: QUIZ -->
+  <section class="screen" id="screen-quiz">
+    <header class="quiz-header">
+      <div class="progress-wrap">
+        <span class="q-count"><span id="q-index">1</span>/<span id="q-total">5</span></span>
+        <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      </div>
+      <div class="timer-wrap">
+        <svg class="timer-ring" viewBox="0 0 64 64">
+          <circle class="timer-ring-bg" cx="32" cy="32" r="28"></circle>
+          <circle class="timer-ring-fg" id="timer-ring-fg" cx="32" cy="32" r="28"></circle>
+        </svg>
+        <span class="timer-num" id="timer-num">60</span>
+      </div>
+    </header>
+
+    <h2 class="question-text" id="question-text">Question text appears here</h2>
+
+    <div class="board">
+      <div class="player-col" id="col-p1">
+        <div class="col-head">
+          <span class="player-tag p1" id="p1-tag">P1</span>
+          <span class="col-score" id="p1-score">0</span>
+        </div>
+        <div class="options" id="p1-options"></div>
+        <p class="col-status" id="p1-status">&nbsp;</p>
+      </div>
+
+      <div class="player-col" id="col-p2">
+        <div class="col-head">
+          <span class="player-tag p2" id="p2-tag">P2</span>
+          <span class="col-score" id="p2-score">0</span>
+        </div>
+        <div class="options" id="p2-options"></div>
+        <p class="col-status" id="p2-status">&nbsp;</p>
+      </div>
+    </div>
+
+    <div class="reveal" id="reveal">
+      <p class="reveal-answer"><span data-i18n="correctIs">Correct answer:</span> <strong id="reveal-answer-text"></strong></p>
+      <p class="reveal-explain" id="reveal-explain"></p>
+      <button class="primary-btn" id="next-btn" data-i18n="nextBtn">Next Question →</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 4: RESULTS -->
+  <section class="screen" id="screen-results">
+    <h2 class="title small" data-i18n="roundDone">Round complete</h2>
+    <div class="result-board">
+      <div class="result-card" id="result-p1">
+        <span class="player-tag p1" id="result-p1-tag">P1</span>
+        <span class="result-score" id="result-p1-score">0</span>
+      </div>
+      <div class="result-vs">·</div>
+      <div class="result-card" id="result-p2">
+        <span class="player-tag p2" id="result-p2-tag">P2</span>
+        <span class="result-score" id="result-p2-score">0</span>
+      </div>
+    </div>
+    <p class="winner-line" id="winner-line"></p>
+    <div class="result-actions">
+      <button class="primary-btn" id="play-again-btn" data-i18n="playAgain">Play Again ↺</button>
+      <button class="ghost-btn" id="change-lang-btn" data-i18n="changeLang2">Change Language</button>
+      <button class="ghost-btn" id="stop-btn" data-i18n="stopBtn">Stop for now</button>
+    </div>
+  </section>
+
+  <!-- SCREEN 5: STOP -->
+  <section class="screen" id="screen-stop">
+    <h2 class="title small" data-i18n="stopTitle">Return to stillness</h2>
+    <p class="subtitle" data-i18n="stopSubtitle">The break is over whenever you're ready. Come back anytime.</p>
+    <button class="primary-btn" id="restart-btn" data-i18n="restartBtn">Start Over</button>
+  </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

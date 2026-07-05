@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "question": "Which title belongs to Vachanamrut Gadhada I-16?",
+    "options": [
+      "Wisdom",
+      "Divine Light",
+      "Conviction of God",
+      "Nothing Is Greater Than Worshipping God"
+    ],
+    "correct": 0,
+    "explanation": "Vachanamrut Gadhada I-16 is titled “Wisdom.”"
+  },
+  {
+    "id": 2,
+    "question": "Which title belongs to Vachanamrut Gadhada I-18?",
+    "options": [
+      "The Fundamental Principle; Worldly Attachment",
+      "Denouncing the Vishays; A Haveli",
+      "Liberation through Faith in the Manifest form of God",
+      "Conviction of God"
+    ],
+    "correct": 1,
+    "explanation": "Vachanamrut Gadhada I-18 is titled “Denouncing the Vishays; A Haveli.”"
+  },
+  {
+    "id": 3,
+    "question": "Which title belongs to Vachanamrut Gadhada I-27?",
+    "options": [
+      "The Understanding by which God Eternally Resides within One",
+      "Divine Light",
+      "Acquiring the Virtues of Satya, Shauch, Etc.",
+      "Nothing Is Greater Than Worshipping God"
+    ],
+    "correct": 0,
+    "explanation": "Vachanamrut Gadhada I-27 is titled “The Understanding by which God Eternally Resides within One.”"
+  },
+  {
+    "id": 4,
+    "question": "Which title belongs to Vachanamrut Gadhada I-37?",
+    "options": [
+      "Conviction of God",
+      "Attachment to One’s Native Place; Eleven Honors",
+      "Wisdom",
+      "The Fundamental Principle; Worldly Attachment"
+    ],
+    "correct": 1,
+    "explanation": "Vachanamrut Gadhada I-37 is titled “Attachment to One’s Native Place; Eleven Honors.”"
+  },
+  {
+    "id": 5,
+    "question": "Which title belongs to Vachanamrut Gadhada I-62?",
+    "options": [
+      "Divine Light",
+      "Acquiring the Virtues of Satya, Shauch, Etc.",
+      "Liberation through Faith in the Manifest form of God",
+      "Denouncing the Vishays; A Haveli"
+    ],
+    "correct": 1,
+    "explanation": "Vachanamrut Gadhada I-62 is titled “Acquiring the Virtues of Satya, Shauch, Etc.”"
+  },
+  {
+    "id": 6,
+    "question": "Which title belongs to Vachanamrut Gadhada II-13?",
+    "options": [
+      "Divine Light",
+      "Wisdom",
+      "Nothing Is Greater Than Worshipping God",
+      "Conviction of God"
+    ],
+    "correct": 0,
+    "explanation": "Vachanamrut Gadhada II-13 is titled “Divine Light.”"
+  },
+  {
+    "id": 7,
+    "question": "Which title belongs to Vachanamrut Gadhada II-50?",
+    "options": [
+      "Attachment to One’s Native Place; Eleven Honors",
+      "The Fundamental Principle; Worldly Attachment",
+      "Denouncing the Vishays; A Haveli",
+      "Liberation through Faith in the Manifest form of God"
+    ],
+    "correct": 1,
+    "explanation": "Vachanamrut Gadhada II-50 is titled “The Fundamental Principle; Worldly Attachment.”"
+  },
+  {
+    "id": 8,
+    "question": "Which title belongs to Vachanamrut Jetalpur-4?",
+    "options": [
+      "Liberation through Faith in the Manifest form of God",
+      "Wisdom",
+      "Conviction of God",
+      "Divine Light"
+    ],
+    "correct": 0,
+    "explanation": "Vachanamrut Jetalpur-4 is titled “Liberation through Faith in the Manifest form of God.”"
+  },
+  {
+    "id": 9,
+    "question": "Which title belongs to Vachanamrut Jetalpur-5?",
+    "options": [
+      "The Fundamental Principle; Worldly Attachment",
+      "Acquiring the Virtues of Satya, Shauch, Etc.",
+      "Nothing Is Greater Than Worshipping God",
+      "The Understanding by which God Eternally Resides within One"
+    ],
+    "correct": 2,
+    "explanation": "Vachanamrut Jetalpur-5 is titled “Nothing Is Greater Than Worshipping God.”"
+  },
+  {
+    "id": 10,
+    "question": "Which title belongs to Vachanamrut Loya-18?",
+    "options": [
+      "Conviction of God",
+      "Divine Light",
+      "Wisdom",
+      "Attachment to One’s Native Place; Eleven Honors"
+    ],
+    "correct": 0,
+    "explanation": "Vachanamrut Loya-18 is titled “Conviction of God.”"
+  }
+]
