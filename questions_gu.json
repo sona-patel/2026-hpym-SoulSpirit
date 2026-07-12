@@ -118,5 +118,269 @@
     ],
     "correct": 0,
     "explanation": "વચનામૃત લોયા-18નું શીર્ષક “ભગવાનનો નિશ્ચય” છે."
+  },
+  {
+    "id": 11,
+    "question": "“વિવેક” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત ગઢડા પ્રથમ-16",
+      "વચનામૃત ગઢડા મધ્ય-13",
+      "વચનામૃત લોયા-18",
+      "વચનામૃત જેતલપુર-5"
+    ],
+    "correct": 0,
+    "explanation": "“વિવેક” શીર્ષક વચનામૃત ગઢડા પ્રથમ-16નું છે."
+  },
+  {
+    "id": 12,
+    "question": "“વિષયોનું ખંડન; હવેલી” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત ગઢડા પ્રથમ-37",
+      "વચનામૃત ગઢડા પ્રથમ-18",
+      "વચનામૃત ગઢડા મધ્ય-50",
+      "વચનામૃત જેતલપુર-4"
+    ],
+    "correct": 1,
+    "explanation": "“વિષયોનું ખંડન; હવેલી” શીર્ષક વચનામૃત ગઢડા પ્રથમ-18નું છે."
+  },
+  {
+    "id": 13,
+    "question": "“ભગવાન અખંડ નિવાસ કરી રહે તેવી સમજણનું” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત ગઢડા પ્રથમ-27",
+      "વચનામૃત ગઢડા પ્રથમ-62",
+      "વચનામૃત ગઢડા મધ્ય-13",
+      "વચનામૃત લોયા-18"
+    ],
+    "correct": 0,
+    "explanation": "“ભગવાન અખંડ નિવાસ કરી રહે તેવી સમજણનું” શીર્ષક વચનામૃત ગઢડા પ્રથમ-27નું છે."
+  },
+  {
+    "id": 14,
+    "question": "“દેશવાસનાનું, અગિયાર પદવીનું” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત ગઢડા પ્રથમ-16",
+      "વચનામૃત ગઢડા પ્રથમ-37",
+      "વચનામૃત ગઢડા મધ્ય-50",
+      "વચનામૃત જેતલપુર-5"
+    ],
+    "correct": 1,
+    "explanation": "“દેશવાસનાનું, અગિયાર પદવીનું” શીર્ષક વચનામૃત ગઢડા પ્રથમ-37નું છે."
+  },
+  {
+    "id": 15,
+    "question": "“સત્ય-શૌચાદિક ગુણ આવ્યાનું” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત ગઢડા મધ્ય-13",
+      "વચનામૃત ગઢડા પ્રથમ-62",
+      "વચનામૃત જેતલપુર-4",
+      "વચનામૃત ગઢડા પ્રથમ-18"
+    ],
+    "correct": 1,
+    "explanation": "“સત્ય-શૌચાદિક ગુણ આવ્યાનું” શીર્ષક વચનામૃત ગઢડા પ્રથમ-62નું છે."
+  },
+  {
+    "id": 16,
+    "question": "“તેજનું” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત ગઢડા મધ્ય-13",
+      "વચનામૃત ગઢડા પ્રથમ-16",
+      "વચનામૃત લોયા-18",
+      "વચનામૃત ગઢડા પ્રથમ-27"
+    ],
+    "correct": 0,
+    "explanation": "“તેજનું” શીર્ષક વચનામૃત ગઢડા મધ્ય-13નું છે."
+  },
+  {
+    "id": 17,
+    "question": "“રહસ્યનું, જગતના લોચાનું” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત ગઢડા પ્રથમ-37",
+      "વચનામૃત ગઢડા મધ્ય-50",
+      "વચનામૃત ગઢડા પ્રથમ-62",
+      "વચનામૃત જેતલપુર-4"
+    ],
+    "correct": 1,
+    "explanation": "“રહસ્યનું, જગતના લોચાનું” શીર્ષક વચનામૃત ગઢડા મધ્ય-50નું છે."
+  },
+  {
+    "id": 18,
+    "question": "“પ્રગટ ભગવાનમાં શ્રદ્ધાથી મુક્તિ” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત જેતલપુર-4",
+      "વચનામૃત ગઢડા પ્રથમ-18",
+      "વચનામૃત ગઢડા મધ્ય-13",
+      "વચનામૃત લોયા-18"
+    ],
+    "correct": 0,
+    "explanation": "“પ્રગટ ભગવાનમાં શ્રદ્ધાથી મુક્તિ” શીર્ષક વચનામૃત જેતલપુર-4નું છે."
+  },
+  {
+    "id": 19,
+    "question": "“પ્રત્યક્ષ ભગવાનના નિશ્ચય વડે જીવનું કલ્યાણ” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત ગઢડા મધ્ય-50",
+      "વચનામૃત ગઢડા પ્રથમ-27",
+      "વચનામૃત જેતલપુર-5",
+      "વચનામૃત ગઢડા પ્રથમ-62"
+    ],
+    "correct": 2,
+    "explanation": "“પ્રત્યક્ષ ભગવાનના નિશ્ચય વડે જીવનું કલ્યાણ” શીર્ષક વચનામૃત જેતલપુર-5નું છે."
+  },
+  {
+    "id": 20,
+    "question": "“નિશ્ચયનું” શીર્ષક કયા વચનામૃતનું છે?",
+    "options": [
+      "વચનામૃત લોયા-18",
+      "વચનામૃત ગઢડા પ્રથમ-16",
+      "વચનામૃત ગઢડા પ્રથમ-37",
+      "વચનામૃત ગઢડા મધ્ય-13"
+    ],
+    "correct": 0,
+    "explanation": "“નિશ્ચયનું” શીર્ષક વચનામૃત લોયા-18નું છે."
+  },
+  {
+    "id": 21,
+    "question": "Which Vachanamrut has the title “Conviction of God”?",
+    "options": [
+      "Vachanamrut Loya-18",
+      "Vachanamrut Panchala-7",
+      "Vachanamrut Gadhada II-28",
+      "Vachanamrut Gadhada III-11"
+    ],
+    "correct": 0,
+    "explanation": "“Conviction of God” is the title of Vachanamrut Loya-18."
+  },
+  {
+    "id": 22,
+    "question": "Which Vachanamrut has the title “The ‘Māyā’ of a Magician”?",
+    "options": [
+      "Vachanamrut Gadhada II-41",
+      "Vachanamrut Panchala-7",
+      "Vachanamrut Gadhada III-7",
+      "Vachanamrut Loya-18"
+    ],
+    "correct": 1,
+    "explanation": "“The ‘Māyā’ of a Magician” is the title of Vachanamrut Panchala-7."
+  },
+  {
+    "id": 23,
+    "question": "Which Vachanamrut has the title “Mahārāj’s Compassionate Nature; A ‘Lifeline’”?",
+    "options": [
+      "Vachanamrut Gadhada III-11",
+      "Vachanamrut Gadhada II-28",
+      "Vachanamrut Panchala-7",
+      "Vachanamrut Gadhada III-7"
+    ],
+    "correct": 1,
+    "explanation": "“Mahārāj’s Compassionate Nature; A ‘Lifeline’” is the title of Vachanamrut Gadhada II-28."
+  },
+  {
+    "id": 24,
+    "question": "Which Vachanamrut has the title “A Bone in the Form of Egotism”?",
+    "options": [
+      "Vachanamrut Gadhada II-28",
+      "Vachanamrut Loya-18",
+      "Vachanamrut Gadhada II-41",
+      "Vachanamrut Gadhada III-11"
+    ],
+    "correct": 2,
+    "explanation": "“A Bone in the Form of Egotism” is the title of Vachanamrut Gadhada II-41."
+  },
+  {
+    "id": 25,
+    "question": "Which Vachanamrut has the title “An Iron Nail”?",
+    "options": [
+      "Vachanamrut Panchala-7",
+      "Vachanamrut Gadhada III-7",
+      "Vachanamrut Gadhada II-41",
+      "Vachanamrut Gadhada II-28"
+    ],
+    "correct": 1,
+    "explanation": "“An Iron Nail” is the title of Vachanamrut Gadhada III-7."
+  },
+  {
+    "id": 26,
+    "question": "Which Vachanamrut has the title “Understanding like that of Sitāji”?",
+    "options": [
+      "Vachanamrut Gadhada III-11",
+      "Vachanamrut Gadhada III-7",
+      "Vachanamrut Loya-18",
+      "Vachanamrut Panchala-7"
+    ],
+    "correct": 0,
+    "explanation": "“Understanding like that of Sitāji” is the title of Vachanamrut Gadhada III-11."
+  },
+  {
+    "id": 27,
+    "question": "વચનામૃત લોયા-18નું શીર્ષક કયું છે?",
+    "options": [
+      "નિશ્ચયનું",
+      "નટની માયાનું",
+      "જીવનદોરીનું, દયાળુ પ્રકૃતિનું",
+      "સીતાજીના જેવી સમજણનું"
+    ],
+    "correct": 0,
+    "explanation": "વચનામૃત લોયા-18નું શીર્ષક “નિશ્ચયનું” છે."
+  },
+  {
+    "id": 28,
+    "question": "વચનામૃત પંચાળા-7નું શીર્ષક કયું છે?",
+    "options": [
+      "માનરૂપી હાડકાનું",
+      "નટની માયાનું",
+      "વજ્રની ખીલીનું",
+      "નિશ્ચયનું"
+    ],
+    "correct": 1,
+    "explanation": "વચનામૃત પંચાળા-7નું શીર્ષક “નટની માયાનું” છે."
+  },
+  {
+    "id": 29,
+    "question": "વચનામૃત ગઢડા મધ્ય-28નું શીર્ષક કયું છે?",
+    "options": [
+      "સીતાજીના જેવી સમજણનું",
+      "જીવનદોરીનું, દયાળુ પ્રકૃતિનું",
+      "નટની માયાનું",
+      "વજ્રની ખીલીનું"
+    ],
+    "correct": 1,
+    "explanation": "વચનામૃત ગઢડા મધ્ય-28નું શીર્ષક “જીવનદોરીનું, દયાળુ પ્રકૃતિનું” છે."
+  },
+  {
+    "id": 30,
+    "question": "વચનામૃત ગઢડા મધ્ય-41નું શીર્ષક કયું છે?",
+    "options": [
+      "જીવનદોરીનું, દયાળુ પ્રકૃતિનું",
+      "નિશ્ચયનું",
+      "માનરૂપી હાડકાનું",
+      "સીતાજીના જેવી સમજણનું"
+    ],
+    "correct": 2,
+    "explanation": "વચનામૃત ગઢડા મધ્ય-41નું શીર્ષક “માનરૂપી હાડકાનું” છે."
+  },
+  {
+    "id": 31,
+    "question": "વચનામૃત ગઢડા અંત્ય-7નું શીર્ષક કયું છે?",
+    "options": [
+      "નટની માયાનું",
+      "વજ્રની ખીલીનું",
+      "માનરૂપી હાડકાનું",
+      "જીવનદોરીનું, દયાળુ પ્રકૃતિનું"
+    ],
+    "correct": 1,
+    "explanation": "વચનામૃત ગઢડા અંત્ય-7નું શીર્ષક “વજ્રની ખીલીનું” છે."
+  },
+  {
+    "id": 32,
+    "question": "વચનામૃત ગઢડા અંત્ય-11નું શીર્ષક કયું છે?",
+    "options": [
+      "સીતાજીના જેવી સમજણનું",
+      "વજ્રની ખીલીનું",
+      "નિશ્ચયનું",
+      "નટની માયાનું"
+    ],
+    "correct": 0,
+    "explanation": "વચનામૃત ગઢડા અંત્ય-11નું શીર્ષક “સીતાજીના જેવી સમજણનું” છે."
   }
 ]

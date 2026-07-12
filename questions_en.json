@@ -118,5 +118,269 @@
     ],
     "correct": 0,
     "explanation": "Vachanamrut Loya-18 is titled “Conviction of God.”"
+  },
+  {
+    "id": 11,
+    "question": "Which Vachanamrut has the title “Wisdom”?",
+    "options": [
+      "Vachanamrut Gadhada I-16",
+      "Vachanamrut Gadhada II-13",
+      "Vachanamrut Loya-18",
+      "Vachanamrut Jetalpur-5"
+    ],
+    "correct": 0,
+    "explanation": "“Wisdom” is the title of Vachanamrut Gadhada I-16."
+  },
+  {
+    "id": 12,
+    "question": "Which Vachanamrut has the title “Denouncing the Vishays; A Haveli”?",
+    "options": [
+      "Vachanamrut Gadhada I-37",
+      "Vachanamrut Gadhada I-18",
+      "Vachanamrut Gadhada II-50",
+      "Vachanamrut Jetalpur-4"
+    ],
+    "correct": 1,
+    "explanation": "“Denouncing the Vishays; A Haveli” is the title of Vachanamrut Gadhada I-18."
+  },
+  {
+    "id": 13,
+    "question": "Which Vachanamrut has the title “The Understanding by which God Eternally Resides within One”?",
+    "options": [
+      "Vachanamrut Gadhada I-27",
+      "Vachanamrut Gadhada I-62",
+      "Vachanamrut Gadhada II-13",
+      "Vachanamrut Loya-18"
+    ],
+    "correct": 0,
+    "explanation": "“The Understanding by which God Eternally Resides within One” is the title of Vachanamrut Gadhada I-27."
+  },
+  {
+    "id": 14,
+    "question": "Which Vachanamrut has the title “Attachment to One’s Native Place; Eleven Honors”?",
+    "options": [
+      "Vachanamrut Gadhada I-16",
+      "Vachanamrut Gadhada I-37",
+      "Vachanamrut Gadhada II-50",
+      "Vachanamrut Jetalpur-5"
+    ],
+    "correct": 1,
+    "explanation": "“Attachment to One’s Native Place; Eleven Honors” is the title of Vachanamrut Gadhada I-37."
+  },
+  {
+    "id": 15,
+    "question": "Which Vachanamrut has the title “Acquiring the Virtues of Satya, Shauch, Etc.”?",
+    "options": [
+      "Vachanamrut Gadhada II-13",
+      "Vachanamrut Gadhada I-62",
+      "Vachanamrut Jetalpur-4",
+      "Vachanamrut Gadhada I-18"
+    ],
+    "correct": 1,
+    "explanation": "“Acquiring the Virtues of Satya, Shauch, Etc.” is the title of Vachanamrut Gadhada I-62."
+  },
+  {
+    "id": 16,
+    "question": "Which Vachanamrut has the title “Divine Light”?",
+    "options": [
+      "Vachanamrut Gadhada II-13",
+      "Vachanamrut Gadhada I-16",
+      "Vachanamrut Loya-18",
+      "Vachanamrut Gadhada I-27"
+    ],
+    "correct": 0,
+    "explanation": "“Divine Light” is the title of Vachanamrut Gadhada II-13."
+  },
+  {
+    "id": 17,
+    "question": "Which Vachanamrut has the title “The Fundamental Principle; Worldly Attachment”?",
+    "options": [
+      "Vachanamrut Gadhada I-37",
+      "Vachanamrut Gadhada II-50",
+      "Vachanamrut Gadhada I-62",
+      "Vachanamrut Jetalpur-4"
+    ],
+    "correct": 1,
+    "explanation": "“The Fundamental Principle; Worldly Attachment” is the title of Vachanamrut Gadhada II-50."
+  },
+  {
+    "id": 18,
+    "question": "Which Vachanamrut has the title “Liberation through Faith in the Manifest form of God”?",
+    "options": [
+      "Vachanamrut Jetalpur-4",
+      "Vachanamrut Gadhada I-18",
+      "Vachanamrut Gadhada II-13",
+      "Vachanamrut Loya-18"
+    ],
+    "correct": 0,
+    "explanation": "“Liberation through Faith in the Manifest form of God” is the title of Vachanamrut Jetalpur-4."
+  },
+  {
+    "id": 19,
+    "question": "Which Vachanamrut has the title “Nothing Is Greater Than Worshipping God”?",
+    "options": [
+      "Vachanamrut Gadhada II-50",
+      "Vachanamrut Gadhada I-27",
+      "Vachanamrut Jetalpur-5",
+      "Vachanamrut Gadhada I-62"
+    ],
+    "correct": 2,
+    "explanation": "“Nothing Is Greater Than Worshipping God” is the title of Vachanamrut Jetalpur-5."
+  },
+  {
+    "id": 20,
+    "question": "Which Vachanamrut has the title “Conviction of God”?",
+    "options": [
+      "Vachanamrut Loya-18",
+      "Vachanamrut Gadhada I-16",
+      "Vachanamrut Gadhada I-37",
+      "Vachanamrut Gadhada II-13"
+    ],
+    "correct": 0,
+    "explanation": "“Conviction of God” is the title of Vachanamrut Loya-18."
+  },
+  {
+    "id": 21,
+    "question": "Which Vachanamrut has the title “Conviction of God”?",
+    "options": [
+      "Vachanamrut Loya-18",
+      "Vachanamrut Panchala-7",
+      "Vachanamrut Gadhada II-28",
+      "Vachanamrut Gadhada III-11"
+    ],
+    "correct": 0,
+    "explanation": "“Conviction of God” is the title of Vachanamrut Loya-18."
+  },
+  {
+    "id": 22,
+    "question": "Which Vachanamrut has the title “The ‘Māyā’ of a Magician”?",
+    "options": [
+      "Vachanamrut Gadhada II-41",
+      "Vachanamrut Panchala-7",
+      "Vachanamrut Gadhada III-7",
+      "Vachanamrut Loya-18"
+    ],
+    "correct": 1,
+    "explanation": "“The ‘Māyā’ of a Magician” is the title of Vachanamrut Panchala-7."
+  },
+  {
+    "id": 23,
+    "question": "Which Vachanamrut has the title “Mahārāj’s Compassionate Nature; A ‘Lifeline’”?",
+    "options": [
+      "Vachanamrut Gadhada III-11",
+      "Vachanamrut Gadhada II-28",
+      "Vachanamrut Panchala-7",
+      "Vachanamrut Gadhada III-7"
+    ],
+    "correct": 1,
+    "explanation": "“Mahārāj’s Compassionate Nature; A ‘Lifeline’” is the title of Vachanamrut Gadhada II-28."
+  },
+  {
+    "id": 24,
+    "question": "Which Vachanamrut has the title “A Bone in the Form of Egotism”?",
+    "options": [
+      "Vachanamrut Gadhada II-28",
+      "Vachanamrut Loya-18",
+      "Vachanamrut Gadhada II-41",
+      "Vachanamrut Gadhada III-11"
+    ],
+    "correct": 2,
+    "explanation": "“A Bone in the Form of Egotism” is the title of Vachanamrut Gadhada II-41."
+  },
+  {
+    "id": 25,
+    "question": "Which Vachanamrut has the title “An Iron Nail”?",
+    "options": [
+      "Vachanamrut Panchala-7",
+      "Vachanamrut Gadhada III-7",
+      "Vachanamrut Gadhada II-41",
+      "Vachanamrut Gadhada II-28"
+    ],
+    "correct": 1,
+    "explanation": "“An Iron Nail” is the title of Vachanamrut Gadhada III-7."
+  },
+  {
+    "id": 26,
+    "question": "Which Vachanamrut has the title “Understanding like that of Sitāji”?",
+    "options": [
+      "Vachanamrut Gadhada III-11",
+      "Vachanamrut Gadhada III-7",
+      "Vachanamrut Loya-18",
+      "Vachanamrut Panchala-7"
+    ],
+    "correct": 0,
+    "explanation": "“Understanding like that of Sitāji” is the title of Vachanamrut Gadhada III-11."
+  },
+  {
+    "id": 27,
+    "question": "Which is the title of Vachanamrut Loya-18?",
+    "options": [
+      "Conviction of God",
+      "The 'Māyā' of a Magician",
+      "Mahārāj’s Compassionate Nature; A 'Lifeline'",
+      "Understanding like that of Sitāji"
+    ],
+    "correct": 0,
+    "explanation": "The title of Vachanamrut Loya-18 is “Conviction of God”."
+  },
+  {
+    "id": 28,
+    "question": "Which is the title of Vachanamrut Panchala-7?",
+    "options": [
+      "A Bone in the Form of Egotism",
+      "The 'Māyā' of a Magician",
+      "An Iron Nail",
+      "Conviction of God"
+    ],
+    "correct": 1,
+    "explanation": "The title of Vachanamrut Panchala-7 is “The 'Māyā' of a Magician”."
+  },
+  {
+    "id": 29,
+    "question": "Which is the title of Vachanamrut Gadhada II-28?",
+    "options": [
+      "Understanding like that of Sitāji",
+      "Mahārāj’s Compassionate Nature; A 'Lifeline'",
+      "The 'Māyā' of a Magician",
+      "An Iron Nail"
+    ],
+    "correct": 1,
+    "explanation": "The title of Vachanamrut Gadhada II-28 is “Mahārāj’s Compassionate Nature; A 'Lifeline'”."
+  },
+  {
+    "id": 30,
+    "question": "Which is the title of Vachanamrut Gadhada II-41?",
+    "options": [
+      "Mahārāj’s Compassionate Nature; A 'Lifeline'",
+      "Conviction of God",
+      "A Bone in the Form of Egotism",
+      "Understanding like that of Sitāji"
+    ],
+    "correct": 2,
+    "explanation": "The title of Vachanamrut Gadhada II-41 is “A Bone in the Form of Egotism”."
+  },
+  {
+    "id": 31,
+    "question": "Which is the title of Vachanamrut Gadhada III-7?",
+    "options": [
+      "The 'Māyā' of a Magician",
+      "An Iron Nail",
+      "A Bone in the Form of Egotism",
+      "Mahārāj’s Compassionate Nature; A 'Lifeline'"
+    ],
+    "correct": 1,
+    "explanation": "The title of Vachanamrut Gadhada III-7 is “An Iron Nail”."
+  },
+  {
+    "id": 32,
+    "question": "Which is the title of Vachanamrut Gadhada III-11?",
+    "options": [
+      "Understanding like that of Sitāji",
+      "An Iron Nail",
+      "Conviction of God",
+      "The 'Māyā' of a Magician"
+    ],
+    "correct": 0,
+    "explanation": "The title of Vachanamrut Gadhada III-11 is “Understanding like that of Sitāji”."
   }
 ]
