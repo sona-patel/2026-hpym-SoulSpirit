@@ -4,7 +4,7 @@
    Edit those files to add, remove, or change questions.
    ============================================================ */
 
-const QUESTIONS_PER_ROUND = 5;
+const QUESTIONS_PER_ROUND = 3;
 const SECONDS_PER_QUESTION = 36;
 const TIMER_CIRCUMFERENCE = 175.9; // 2 * PI * r(28)
 
@@ -14,10 +14,9 @@ const I18N = {
   en: {
     namesTitle: "Who's playing?",
     namesSubtitle: "Name each seeker. First to answer right, scores higher.",
-    p1Placeholder: "Player One",
-    p2Placeholder: "Player Two",
+    p1Placeholder: "Bhoolku 1",
+    p2Placeholder: "Bhoolku 2",
     beginBtn: "Begin Round →",
-    changeLang: "← change language",
     changeLang2: "Change Language",
     correctIs: "Correct answer:",
     nextBtn: "Next Question →",
@@ -27,8 +26,8 @@ const I18N = {
     stopTitle: "Return to stillness",
     stopSubtitle: "The break is over whenever you're ready. Come back anytime.",
     restartBtn: "Start Over",
-    winnerTie: "It's a tie — well matched minds.",
-    winnerIs: (name) => `${name} takes this round.`,
+    winnerTie: "Two souls, perfectly in tune",
+    winnerIs: (name) => `${name}'s soul is glowing brightest!`,
     timeUp: "Time's up",
     youAnswered: "Locked in",
     correctFirst: "Correct! First to answer +bonus",
@@ -38,10 +37,9 @@ const I18N = {
   gu: {
     namesTitle: "કોણ રમે છે?",
     namesSubtitle: "દરેક સાધકનું નામ આપો. જે પહેલા સાચો જવાબ આપશે, તેને વધુ ગુણ મળશે.",
-    p1Placeholder: "ખેલાડી ૧",
-    p2Placeholder: "ખેલાડી ૨",
+    p1Placeholder: "ભૂલકું ૧",
+    p2Placeholder: "ભૂલકું ૨",
     beginBtn: "રાઉન્ડ શરૂ કરો →",
-    changeLang: "← ભાષા બદલો",
     changeLang2: "ભાષા બદલો",
     correctIs: "સાચો જવાબ:",
     nextBtn: "આગળનો પ્રશ્ન →",
@@ -51,8 +49,8 @@ const I18N = {
     stopTitle: "શાંતિ તરફ પાછા ફરો",
     stopSubtitle: "જ્યારે તૈયાર હો ત્યારે વિરામ પૂરો થાય છે. ગમે ત્યારે પાછા આવો.",
     restartBtn: "ફરીથી શરૂ કરો",
-    winnerTie: "બરાબરી — બંને મન સરસ રીતે મેળ ખાય છે.",
-    winnerIs: (name) => `${name} આ રાઉન્ડ જીતે છે.`,
+    winnerTie: "બે આત્માઓ, સંપૂર્ણ તાલમાં",
+    winnerIs: (name) => `${name}નો આત્મા સૌથી વધુ ચમકી રહ્યો છે!`,
     timeUp: "સમય પૂરો",
     youAnswered: "નોંધાયું",
     correctFirst: "સાચું! પ્રથમ જવાબ +બોનસ",
@@ -68,7 +66,7 @@ let state = {
   roundQuestions: [],
   qIndex: 0,
   scores: { p1: 0, p2: 0 },
-  names: { p1: "Player One", p2: "Player Two" },
+  names: { p1: "Bhoolku 1", p2: "Bhoolku 2" },
   timer: null,
   timeLeft: SECONDS_PER_QUESTION,
   answered: { p1: false, p2: false },
@@ -77,6 +75,7 @@ let state = {
 
 const $ = (sel) => document.querySelector(sel);
 const screens = {
+  welcome: $("#screen-welcome"),
   lang: $("#screen-lang"),
   names: $("#screen-names"),
   quiz: $("#screen-quiz"),
@@ -102,17 +101,40 @@ function applyI18n() {
   document.documentElement.lang = state.lang;
 }
 
+/* ---------- Welcome ---------- */
+$("#ready-btn").addEventListener("click", () => showScreen("lang"));
+$("#back-to-welcome").addEventListener("click", () => showScreen("welcome"));
+
 /* ---------- Language selection ---------- */
+async function selectLanguage(lang) {
+  state.lang = lang;
+  applyI18n();
+  syncLangButtons();
+  await loadQuestions(lang);
+}
+
+function syncLangButtons() {
+  document.querySelectorAll(".lang-btn").forEach((b) => {
+    b.classList.toggle("active", b.dataset.lang === state.lang);
+  });
+  document.querySelectorAll(".mini-lang-btn").forEach((b) => {
+    b.classList.toggle("active", b.dataset.lang === state.lang);
+  });
+}
+
 document.querySelectorAll(".lang-btn").forEach((btn) => {
   btn.addEventListener("click", async () => {
-    state.lang = btn.dataset.lang;
-    applyI18n();
-    await loadQuestions(state.lang);
+    await selectLanguage(btn.dataset.lang);
     showScreen("names");
   });
 });
 
-$("#back-to-lang").addEventListener("click", () => showScreen("lang"));
+document.querySelectorAll(".mini-lang-btn").forEach((btn) => {
+  btn.addEventListener("click", async () => {
+    if (btn.dataset.lang === state.lang) return;
+    await selectLanguage(btn.dataset.lang);
+  });
+});
 
 async function loadQuestions(lang) {
   const res = await fetch(FILES[lang]);
@@ -287,7 +309,7 @@ function showResults() {
     const winnerName = state.scores.p1 > state.scores.p2 ? state.names.p1 : state.names.p2;
     line = dict.winnerIs(winnerName);
   }
-  $("#winner-line").textContent = line;
+  $("#winner-text").textContent = line;
   showScreen("results");
 }
 
@@ -298,3 +320,4 @@ $("#restart-btn").addEventListener("click", () => showScreen("lang"));
 
 /* ---------- init ---------- */
 applyI18n();
+syncLangButtons();
