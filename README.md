@@ -1,7 +1,7 @@
-# Antar — Two-Player Spiritual Quiz Break
+# Soul Spirit — Two-Player Spiritual Quiz Break
 
 A calm, fast little quiz to play between two people during a break — pick a
-language, race through 5 multiple-choice questions in 60 seconds each, and
+language, race through 3 multiple-choice questions in 36 seconds each, and
 see who scores higher. No build tools, no backend — just HTML, CSS, and JS,
 so it hosts for free on GitHub Pages.
 

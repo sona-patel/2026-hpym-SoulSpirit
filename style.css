@@ -144,6 +144,10 @@ body:lang(gu), [lang="gu"] { font-family: "Noto Sans Gujarati", "Inter", sans-se
   transform: translateY(-2px);
   background: #2c2860;
 }
+.lang-btn.active {
+  border-color: var(--marigold);
+  background: #2c2860;
+}
 .lang-name {
   font-family: var(--font-display);
   font-size: 22px;
@@ -152,6 +156,34 @@ body:lang(gu), [lang="gu"] { font-family: "Noto Sans Gujarati", "Inter", sans-se
 .lang-hint {
   font-size: 13px;
   color: var(--cream-dim);
+}
+
+/* --- Mini language toggle (names screen) --- */
+.mini-lang-toggle {
+  display: flex;
+  gap: 4px;
+  background: var(--ink-soft);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px;
+  margin-bottom: 22px;
+}
+.mini-lang-btn {
+  background: none;
+  border: none;
+  color: var(--cream-dim);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 13px;
+  padding: 7px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.mini-lang-btn:hover { color: var(--cream); }
+.mini-lang-btn.active {
+  background: linear-gradient(135deg, var(--marigold), var(--marigold-dim));
+  color: var(--ink-deep);
 }
 
 /* --- Names screen --- */
@@ -212,6 +244,14 @@ body:lang(gu), [lang="gu"] { font-family: "Noto Sans Gujarati", "Inter", sans-se
 }
 .primary-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 22px rgba(232,163,61,0.35); }
 .primary-btn:active { transform: translateY(0); }
+
+.ready-btn {
+  max-width: 360px;
+  white-space: normal;
+  line-height: 1.35;
+  padding: 18px 34px;
+  font-size: 16px;
+}
 
 .ghost-btn {
   background: none;
@@ -422,12 +462,44 @@ body:lang(gu), [lang="gu"] { font-family: "Noto Sans Gujarati", "Inter", sans-se
   color: var(--marigold);
 }
 .result-vs { color: var(--cream-dim); font-size: 18px; }
+
 .winner-line {
-  font-family: var(--font-display);
-  font-size: 19px;
-  color: var(--marigold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
   margin: 18px 0 30px;
 }
+.winner-text {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(18px, 2.4vw, 24px);
+  background: linear-gradient(90deg, var(--marigold), var(--cream), var(--teal), var(--marigold));
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3.2s linear infinite, pulseGlow 2.2s ease-in-out infinite;
+}
+.sparkle {
+  display: inline-block;
+  font-size: 22px;
+  animation: twinkle 1.6s ease-in-out infinite;
+}
+.sparkle-right { animation-delay: 0.5s; }
+
+@keyframes shimmer {
+  to { background-position: 300% center; }
+}
+@keyframes pulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(232,163,61,0.35)); }
+  50% { filter: drop-shadow(0 0 14px rgba(232,163,61,0.75)); }
+}
+@keyframes twinkle {
+  0%, 100% { opacity: 0.35; transform: scale(0.75) rotate(0deg); }
+  50% { opacity: 1; transform: scale(1.2) rotate(15deg); }
+}
+
 .result-actions {
   display: flex;
   flex-direction: column;
