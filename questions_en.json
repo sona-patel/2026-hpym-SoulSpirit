@@ -243,12 +243,12 @@
     "id": 21,
     "question": "Which Vachanamrut has the title “Conviction of God”?",
     "options": [
-      "Vachanamrut Loya-18",
       "Vachanamrut Panchala-7",
       "Vachanamrut Gadhada II-28",
+      "Vachanamrut Loya-18",
       "Vachanamrut Gadhada III-11"
     ],
-    "correct": 0,
+    "correct": 2,
     "explanation": "“Conviction of God” is the title of Vachanamrut Loya-18."
   },
   {
@@ -382,5 +382,65 @@
     ],
     "correct": 0,
     "explanation": "The title of Vachanamrut Gadhada III-11 is “Understanding like that of Sitāji”."
+  },
+  {
+    "id": 33,
+    "question": "In which Vachanamrut does Shriji Mahārāj explain the qualities of a wise devotee who can discern between sat and asat?",
+    "options": [
+      "Vachanamrut Gadhada I-16",
+      "Vachanamrut Gadhada I-18",
+      "Vachanamrut Gadhada I-27",
+      "Vachanamrut Gadhada I-37"
+    ],
+    "correct": 0,
+    "explanation": "Shriji Mahārāj explains the qualities of a wise devotee who can discern between sat and asat in Vachanamrut Gadhada I-16 (Wisdom)."
+  },
+  {
+    "id": 34,
+    "question": "In which Vachanamrut does Shriji Mahārāj teach that one should identify and eradicate one's own flaws?",
+    "options": [
+      "Vachanamrut Gadhada I-16",
+      "Vachanamrut Gadhada I-62",
+      "Vachanamrut Gadhada II-13",
+      "Vachanamrut Jetalpur-5"
+    ],
+    "correct": 0,
+    "explanation": "Shriji Mahārāj teaches that one should identify and eradicate one's own flaws in Vachanamrut Gadhada I-16 (Wisdom)."
+  },
+  {
+    "id": 35,
+    "question": "In which Vachanamrut does Shriji Mahārāj say to accept the words of God and the Sant as the highest truth without any doubt?",
+    "options": [
+      "Vachanamrut Gadhada I-16",
+      "Vachanamrut Gadhada I-37",
+      "Vachanamrut Loya-18",
+      "Vachanamrut Panchala-7"
+    ],
+    "correct": 0,
+    "explanation": "Shriji Mahārāj teaches that the words of God and the Sant should be accepted as the highest truth in Vachanamrut Gadhada I-16 (Wisdom)."
+  },
+  {
+    "id": 36,
+    "question": "In which Vachanamrut does Shriji Mahārāj explain that one is distinct from the mind, body, indriyas and prāns and should behave as the ātmā?",
+    "options": [
+      "Vachanamrut Gadhada I-16",
+      "Vachanamrut Gadhada II-41",
+      "Vachanamrut Gadhada III-11",
+      "Vachanamrut Jetalpur-4"
+    ],
+    "correct": 0,
+    "explanation": "Shriji Mahārāj explains that one is distinct from the mind, body, indriyas and prāns and should behave as the ātmā in Vachanamrut Gadhada I-16 (Wisdom)."
+  },
+  {
+    "id": 37,
+    "question": "In which Vachanamrut does Shriji Mahārāj teach to shun evil company, avoid negative thoughts, and imbibe positive thoughts?",
+    "options": [
+      "Vachanamrut Gadhada I-16",
+      "Vachanamrut Gadhada I-62",
+      "Vachanamrut Gadhada II-50",
+      "Vachanamrut Loya-18"
+    ],
+    "correct": 0,
+    "explanation": "Shriji Mahārāj teaches to shun evil company, avoid negative thoughts, and imbibe positive thoughts in Vachanamrut Gadhada I-16 (Wisdom)."
   }
 ]

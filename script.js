@@ -81,6 +81,7 @@ const screens = {
 function showScreen(name) {
   Object.values(screens).forEach((s) => s.classList.remove("active"));
   screens[name].classList.add("active");
+  document.body.classList.toggle("on-welcome", name === "welcome");
 }
 
 function applyI18n() {
@@ -335,3 +336,4 @@ $("#stop-btn").addEventListener("click", () => showScreen("welcome"));
 /* ---------- init ---------- */
 applyI18n();
 syncLangButtons();
+document.body.classList.add("on-welcome");
