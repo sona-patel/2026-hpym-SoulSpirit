@@ -442,5 +442,77 @@
     ],
     "correct": 0,
     "explanation": "Shriji Mahārāj teaches to shun evil company, avoid negative thoughts, and imbibe positive thoughts in Vachanamrut Gadhada I-16 (Wisdom)."
+  },
+   {
+    "id": 38,
+    "question": "In which Vachanamrut does Shriji Mahārāj teach that one should keep the activities of the five indriyas extremely pure?",
+    "options": [
+      "Vachanamrut Gadhada I-16: Wisdom",
+      "Vachanamrut Gadhada I-37: Attachment to One’s Native Place; Eleven Honors",
+      "Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli",
+      "Vachanamrut Gadhada I-27: The Understanding by which God Eternally Resides within One"
+    ],
+    "correct": 2,
+    "explanation": "Shriji Mahārāj teaches that the activities of the five indriyas should be kept extremely pure in Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli."
+  },
+  {
+  "id": 39,
+  "question": "In which Vachanamrut does Shriji Mahārāj explain the importance of shunning evil company and keeping the company of Satsang?",
+  "options": [
+    "Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli",
+    "Vachanamrut Gadhada I-62: Acquiring the Virtues of Satya, Shauch, Etc.",
+    "Vachanamrut Gadhada II-13: Divine Light",
+    "Vachanamrut Jetalpur-5: Nothing Is Greater Than Worshipping God"
+  ],
+  "correct": 0,
+  "explanation": "Shriji Mahārāj explains the importance of shunning evil company and keeping the company of Satsang in Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli."
+},
+{
+    "id": 40,
+    "question": "In which Vachanamrut does Shriji Mahārāj teach that if the antahkaran becomes pure, one will be able to constantly remember God?",
+    "options": [
+      "Vachanamrut Loya-18: Conviction of God",
+      "Vachanamrut Gadhada II-41: A Bone in the Form of Egotism",
+      "Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli",
+      "Vachanamrut Panchala-7: The 'Māyā' of a Magician"
+    ],
+    "correct": 2,
+    "explanation": "Shriji Mahārāj teaches that a pure antahkaran leads to constant remembrance of God in Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli."
+  },
+  {
+    "id": 41,
+    "question": "In which Vachanamrut does Shriji Mahārāj teach that listening to the words of God and His Sant purifies the mind?",
+    "options": [
+      "Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli",
+      "Vachanamrut Gadhada I-16: Wisdom",
+      "Vachanamrut Gadhada II-28: Mahārāj’s Compassionate Nature; A 'Lifeline'",
+      "Vachanamrut Gadhada I-62: Acquiring the Virtues of Satya, Shauch, Etc."
+    ],
+    "correct": 0,
+    "explanation": "Shriji Mahārāj teaches that the words of God and His Sant purify the mind in Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli."
+  },
+  {
+    "id": 42,
+    "question": "In which Vachanamrut does Shriji Mahārāj explain that evil company pollutes the antahkaran while the company of God and His Sant purifies it?",
+    "options": [
+      "Vachanamrut Gadhada I-62: Acquiring the Virtues of Satya, Shauch, Etc.",
+      "Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli",
+      "Vachanamrut Gadhada II-13: Divine Light",
+      "Vachanamrut Jetalpur-5: Nothing Is Greater Than Worshipping God"
+    ],
+    "correct": 1,
+    "explanation": "Shriji Mahārāj explains the effects of good and evil company in Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli."
+  },
+  {
+    "id": 43,
+    "question": "In which Vachanamrut does Shriji Mahārāj instruct devotees not to imitate Him and to remain pure amidst the temptations of the senses?",
+    "options": [
+      "Vachanamrut Gadhada I-37: Attachment to One’s Native Place; Eleven Honors",
+      "Vachanamrut Gadhada I-27: The Understanding by which God Eternally Resides within One",
+      "Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli",
+      "Vachanamrut Gadhada II-50: The Fundamental Principle; Worldly Attachment"
+    ],
+    "correct": 2,
+    "explanation": "Shriji Mahārāj instructs devotees not to imitate Him and to remain pure amidst temptations in Vachanamrut Gadhada I-18: Denouncing the Vishays; A Haveli."
   }
 ]
