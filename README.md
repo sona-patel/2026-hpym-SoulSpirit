@@ -17,20 +17,23 @@ questions_gu.json    Gujarati question bank (same 40, translated)
 
 ## How the game works
 
-1. Choose language (English / ગુજરાતી).
-2. Enter both players' names (optional — defaults to Player One / Player Two).
-3. 5 random questions are drawn from the question bank. Each question gives
-   **60 seconds**. Both players see the same question with their own set of
-   answer buttons (left = Player 1, right = Player 2) and answer
+1. Welcome page: tap **"Are you ready to test your soul spirit?"**
+2. Choose language (English / ગુજરાતી).
+3. Enter both players' names — defaults to **Bhoolku 1** / **Bhoolku 2**.
+   Both names must be different; the form blocks submission and shows an
+   inline error if the same name (case-insensitive) is entered for both.
+4. 3 random questions are drawn from the question bank. Each question gives
+   **36 seconds**. Both players see the same question with their own set of
+   answer buttons (left = Bhoolku 1, right = Bhoolku 2) and answer
    independently.
-4. **Scoring:** a correct answer earns `25 + seconds remaining` points.
+5. **Scoring:** a correct answer earns `25 + seconds remaining` points.
    Whoever answers correctly *first* gets an extra **+20 speed bonus** — so
    being fast and right pays off more than being right but slow. A wrong
    answer earns 0 and locks that player out for the rest of the question.
-5. After the 5th question, final scores and a winner are shown, with the
-   choice to **Play Again** (new random 5, same language), **Change
-   Language**, or **Stop**.
-6. Questions won't repeat within a round, and the game avoids repeating a
+6. After the 3rd question, final scores and an animated "soul glow" winner
+   message are shown, with the choice to **Play Again** or **Stop for now**
+   — both return to the welcome page — or **Change Language**.
+7. Questions won't repeat within a round, and the game avoids repeating a
    question across rounds until the whole bank has been used once — then it
    reshuffles from the full set again.
 
@@ -89,7 +92,7 @@ Then open `http://localhost:8000` in your browser.
    ```bash
    git init
    git add index.html style.css script.js questions_en.json questions_gu.json
-   git commit -m "Initial commit: Antar quiz"
+   git commit -m "Initial commit: Soul Spirit quiz"
    git branch -M main
    git remote add origin https://github.com/<your-username>/antar-quiz.git
    git push -u origin main

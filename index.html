@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Antar · Two-Player Spiritual Quiz</title>
+<title>Soul Spirit · Two-Player Spiritual Quiz</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
@@ -16,10 +16,10 @@
 
   <!-- SCREEN 1: WELCOME -->
   <section class="screen active" id="screen-welcome">
-     <!-- Kalash or logo  -->
-    <!-- <div class="mark">卐 <span class="mark-line"></span></div> -->
-    <h1 class="title">Soul Spirit <span class="title-sub"> 36 seconds to spark your SOUL! </span></h1>
-    <p class="subtitle">A two-minute pause between intense spiritual sessions.<br>A quick game for two, to refresh the mind.</p>
+    <div class="hero-lines">
+      <span class="hero-line">Soul Spirit</span>
+      <span class="hero-line">36 seconds to spark your soul</span>
+    </div>
     <button class="primary-btn ready-btn" id="ready-btn">Are you ready to test your soul spirit?</button>
   </section>
 
@@ -56,6 +56,7 @@
         <span class="player-tag p2">Bhoolku 2</span>
         <input type="text" id="p2-name" maxlength="16" placeholder="Bhoolku 2" data-i18n-placeholder="p2Placeholder">
       </label>
+      <p class="form-error" id="name-error" data-i18n="dupNameError">Bhoolku 1 and Bhoolku 2 need different names.</p>
       <button type="submit" class="primary-btn" data-i18n="beginBtn">Begin Round →</button>
     </form>
   </section>
@@ -64,7 +65,7 @@
   <section class="screen" id="screen-quiz">
     <header class="quiz-header">
       <div class="progress-wrap">
-        <span class="q-count"><span id="q-index">1</span>/<span id="q-total">5</span></span>
+        <span class="q-count"><span id="q-index">1</span>/<span id="q-total">3</span></span>
         <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
       </div>
       <div class="timer-wrap">
@@ -72,7 +73,7 @@
           <circle class="timer-ring-bg" cx="32" cy="32" r="28"></circle>
           <circle class="timer-ring-fg" id="timer-ring-fg" cx="32" cy="32" r="28"></circle>
         </svg>
-        <span class="timer-num" id="timer-num">60</span>
+        <span class="timer-num" id="timer-num">36</span>
       </div>
     </header>
 
@@ -131,12 +132,6 @@
     </div>
   </section>
 
-  <!-- SCREEN 6: STOP -->
-  <section class="screen" id="screen-stop">
-    <h2 class="title small" data-i18n="stopTitle">Return to stillness</h2>
-    <p class="subtitle" data-i18n="stopSubtitle">The break is over whenever you're ready. Come back anytime.</p>
-    <button class="primary-btn" id="restart-btn" data-i18n="restartBtn">Start Over</button>
-  </section>
 
 </main>
 

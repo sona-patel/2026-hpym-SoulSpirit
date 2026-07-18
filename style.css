@@ -1,5 +1,5 @@
 /* ============================================================
-   ANTAR — a two-minute pause between sessions
+   SOUL SPIRIT — a two-minute pause between sessions
    Palette: dusk indigo ground, marigold + temple-teal accents
    ============================================================ */
 
@@ -76,23 +76,6 @@ body:lang(gu), [lang="gu"] { font-family: "Noto Sans Gujarati", "Inter", sans-se
   to   { opacity: 1; transform: translateY(0); }
 }
 
-.mark {
-  font-size: 22px;
-  color: var(--marigold);
-  letter-spacing: 4px;
-  margin-bottom: 18px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  opacity: 0.85;
-}
-.mark-line {
-  width: 40px;
-  height: 1px;
-  background: var(--marigold-dim);
-  display: inline-block;
-}
-
 .title {
   font-family: var(--font-display);
   font-weight: 600;
@@ -118,6 +101,29 @@ body:lang(gu), [lang="gu"] { font-family: "Noto Sans Gujarati", "Inter", sans-se
   max-width: 420px;
   margin: 0 0 36px;
 }
+
+.hero-lines {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 36px;
+}
+.hero-line {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 5.2vw, 46px);
+  line-height: 1.25;
+}
+.hero-line:first-child {
+  background: linear-gradient(90deg, var(--marigold), var(--cream), var(--teal), var(--marigold));
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3.2s linear infinite;
+}
+.hero-line:last-child { color: var(--cream); }
 
 /* --- Language screen --- */
 .lang-choices {
@@ -215,6 +221,17 @@ body:lang(gu), [lang="gu"] { font-family: "Noto Sans Gujarati", "Inter", sans-se
   padding: 10px 6px;
 }
 .name-field input::placeholder { color: var(--cream-dim); opacity: 0.6; }
+
+.name-field.field-error { border-color: var(--coral); }
+
+.form-error {
+  display: none;
+  color: var(--coral);
+  font-size: 13px;
+  text-align: left;
+  margin: -8px 0 0;
+}
+.form-error.show { display: block; animation: rise 0.3s ease; }
 
 .player-tag {
   font-family: var(--font-display);

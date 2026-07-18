@@ -1,5 +1,5 @@
 /* ============================================================
-   ANTAR — two-player spiritual quiz
+   SOUL SPIRIT — two-player spiritual quiz
    All question content lives in questions_en.json / questions_gu.json
    Edit those files to add, remove, or change questions.
    ============================================================ */
@@ -16,6 +16,7 @@ const I18N = {
     namesSubtitle: "Name each seeker. First to answer right, scores higher.",
     p1Placeholder: "Bhoolku 1",
     p2Placeholder: "Bhoolku 2",
+    dupNameError: "Bhoolku 1 and Bhoolku 2 need different names.",
     beginBtn: "Begin Round →",
     changeLang2: "Change Language",
     correctIs: "Correct answer:",
@@ -23,9 +24,6 @@ const I18N = {
     roundDone: "Round complete",
     playAgain: "Play Again ↺",
     stopBtn: "Stop for now",
-    stopTitle: "Return to stillness",
-    stopSubtitle: "The break is over whenever you're ready. Come back anytime.",
-    restartBtn: "Start Over",
     winnerTie: "Two souls, perfectly in tune",
     winnerIs: (name) => `${name}'s soul is glowing brightest!`,
     timeUp: "Time's up",
@@ -39,6 +37,7 @@ const I18N = {
     namesSubtitle: "દરેક સાધકનું નામ આપો. જે પહેલા સાચો જવાબ આપશે, તેને વધુ ગુણ મળશે.",
     p1Placeholder: "ભૂલકું ૧",
     p2Placeholder: "ભૂલકું ૨",
+    dupNameError: "ભૂલકું ૧ અને ભૂલકું ૨ માટે અલગ અલગ નામ આપો.",
     beginBtn: "રાઉન્ડ શરૂ કરો →",
     changeLang2: "ભાષા બદલો",
     correctIs: "સાચો જવાબ:",
@@ -46,9 +45,6 @@ const I18N = {
     roundDone: "રાઉન્ડ પૂર્ણ",
     playAgain: "ફરી રમો ↺",
     stopBtn: "હમણાં માટે બંધ કરો",
-    stopTitle: "શાંતિ તરફ પાછા ફરો",
-    stopSubtitle: "જ્યારે તૈયાર હો ત્યારે વિરામ પૂરો થાય છે. ગમે ત્યારે પાછા આવો.",
-    restartBtn: "ફરીથી શરૂ કરો",
     winnerTie: "બે આત્માઓ, સંપૂર્ણ તાલમાં",
     winnerIs: (name) => `${name}નો આત્મા સૌથી વધુ ચમકી રહ્યો છે!`,
     timeUp: "સમય પૂરો",
@@ -80,7 +76,6 @@ const screens = {
   names: $("#screen-names"),
   quiz: $("#screen-quiz"),
   results: $("#screen-results"),
-  stop: $("#screen-stop"),
 };
 
 function showScreen(name) {
@@ -143,12 +138,32 @@ async function loadQuestions(lang) {
 }
 
 /* ---------- Names ---------- */
+function clearNameError() {
+  $("#name-error").classList.remove("show");
+  $("#p1-name").closest("label").classList.remove("field-error");
+  $("#p2-name").closest("label").classList.remove("field-error");
+}
+$("#p1-name").addEventListener("input", clearNameError);
+$("#p2-name").addEventListener("input", clearNameError);
+
 $("#names-form").addEventListener("submit", (e) => {
   e.preventDefault();
-  const p1 = $("#p1-name").value.trim();
-  const p2 = $("#p2-name").value.trim();
-  state.names.p1 = p1 || I18N[state.lang].p1Placeholder;
-  state.names.p2 = p2 || I18N[state.lang].p2Placeholder;
+  const p1Raw = $("#p1-name").value.trim();
+  const p2Raw = $("#p2-name").value.trim();
+  const p1Final = p1Raw || I18N[state.lang].p1Placeholder;
+  const p2Final = p2Raw || I18N[state.lang].p2Placeholder;
+
+  if (p1Final.toLowerCase() === p2Final.toLowerCase()) {
+    $("#name-error").classList.add("show");
+    $("#p1-name").closest("label").classList.add("field-error");
+    $("#p2-name").closest("label").classList.add("field-error");
+    $("#p2-name").focus();
+    return;
+  }
+  clearNameError();
+
+  state.names.p1 = p1Final;
+  state.names.p2 = p2Final;
   $("#p1-tag").textContent = state.names.p1;
   $("#p2-tag").textContent = state.names.p2;
   $("#result-p1-tag").textContent = state.names.p1;
@@ -223,7 +238,7 @@ function tick() {
   $("#timer-num").textContent = Math.max(state.timeLeft, 0);
   const ratio = Math.max(state.timeLeft, 0) / SECONDS_PER_QUESTION;
   $("#timer-ring-fg").style.strokeDashoffset = TIMER_CIRCUMFERENCE * (1 - ratio);
-  if (state.timeLeft <= 15) $("#timer-ring-fg").style.stroke = "var(--coral)";
+  if (state.timeLeft <= Math.ceil(SECONDS_PER_QUESTION / 4)) $("#timer-ring-fg").style.stroke = "var(--coral)";
 
   if (state.timeLeft <= 0) {
     finishQuestion(true);
@@ -313,10 +328,9 @@ function showResults() {
   showScreen("results");
 }
 
-$("#play-again-btn").addEventListener("click", () => startRound());
+$("#play-again-btn").addEventListener("click", () => showScreen("welcome"));
 $("#change-lang-btn").addEventListener("click", () => showScreen("lang"));
-$("#stop-btn").addEventListener("click", () => showScreen("stop"));
-$("#restart-btn").addEventListener("click", () => showScreen("lang"));
+$("#stop-btn").addEventListener("click", () => showScreen("welcome"));
 
 /* ---------- init ---------- */
 applyI18n();
