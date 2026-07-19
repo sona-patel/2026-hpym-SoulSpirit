@@ -9,3 +9,6 @@ dist/
 docs/superpowers/
 .claude/
 CLAUDE.md
+
+# local git worktrees
+.worktrees/
