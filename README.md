@@ -2,17 +2,23 @@
 
 A calm, fast little quiz to play between two people during a break — pick a
 language, race through 3 multiple-choice questions in 36 seconds each, and
-see who scores higher. No build tools, no backend — just HTML, CSS, and JS,
-so it hosts for free on GitHub Pages.
+see who scores higher. Built with TypeScript and Vite; GitHub Actions builds
+and deploys it to GitHub Pages automatically on every push to `main`, so it
+still hosts for free with no manual steps.
 
 ## Files
 
 ```
-index.html          the app shell (screens + markup)
-style.css            all visual styling
-script.js             game logic (timer, scoring, screens)
-questions_en.json    English question bank (40 questions to start)
-questions_gu.json    Gujarati question bank (same 40, translated)
+index.html                    the app shell (screens + markup)
+style.css                      all visual styling
+src/main.ts                    entry point: event wiring and app bootstrap
+src/dom.ts                     screen switching and rendering
+src/quiz.ts                    pure game logic (scoring, question picking, name validation)
+src/i18n.ts                    English/Gujarati UI strings
+src/types.ts                   shared TypeScript types
+src/data/questions_en.json     English question bank
+src/data/questions_gu.json     Gujarati question bank (same set, translated)
+src/data/index.ts              typed, validated loading of the question banks
 ```
 
 ## How the game works
@@ -69,46 +75,31 @@ just edit the JSON and refresh the page.
 
 ## Running it locally
 
-Because the page uses `fetch()` to load the JSON files, opening
-`index.html` directly by double-clicking it won't work in most browsers
-(they block `fetch` on the `file://` protocol). Serve the folder locally
-instead:
-
 ```bash
-cd antar-quiz
-python3 -m http.server 8000
+npm install
+npm run dev
 ```
 
-Then open `http://localhost:8000` in your browser.
+Then open the local URL Vite prints (typically `http://localhost:5173`).
+
+Other useful commands:
+
+```bash
+npm test        # run the game-logic test suite
+npm run lint     # lint with ESLint
+npm run build    # type-check and produce a production build in dist/
+```
 
 ## Hosting on GitHub Pages
 
-1. **Create a new repository** on GitHub (e.g. `antar-quiz`). Keep it Public
-   — GitHub Pages on the free plan needs a public repo.
-2. **Upload these five files** to the repository root (`index.html`,
-   `style.css`, `script.js`, `questions_en.json`, `questions_gu.json`) —
-   either by dragging them into the GitHub web UI's "Add file → Upload
-   files" screen, or by pushing with git:
-   ```bash
-   git init
-   git add index.html style.css script.js questions_en.json questions_gu.json
-   git commit -m "Initial commit: Soul Spirit quiz"
-   git branch -M main
-   git remote add origin https://github.com/<your-username>/antar-quiz.git
-   git push -u origin main
-   ```
-3. **Turn on GitHub Pages:**
-   - Go to your repo → **Settings** → **Pages** (left sidebar).
-   - Under "Build and deployment", set **Source** to **Deploy from a
-     branch**.
-   - Set **Branch** to `main` and folder to `/ (root)`, then **Save**.
-4. Wait a minute or two, then refresh that Pages settings screen — it will
-   show your live URL, typically:
-   ```
-   https://<your-username>.github.io/antar-quiz/
-   ```
-5. Open that link — the game is now live and shareable with anyone.
+Deployment is automatic via `.github/workflows/deploy.yml`.
 
-Any time you edit a question file and push the change (or re-upload it
-through the GitHub web UI), GitHub Pages redeploys automatically within a
-minute or two.
+**One-time setup:**
+1. Go to your repo → **Settings** → **Pages** (left sidebar).
+2. Under "Build and deployment", set **Source** to **GitHub Actions**.
+
+**From then on:** every push to `main` runs lint + tests, builds the
+project, and publishes `dist/` to GitHub Pages automatically — typically
+live within a minute or two. No manual build step, no branch to upload to.
+Check the **Actions** tab on GitHub if a deploy doesn't show up; a failing
+lint or test run blocks the deploy.
