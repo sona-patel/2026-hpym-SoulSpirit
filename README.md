@@ -45,7 +45,7 @@ src/data/index.ts              typed, validated loading of the question banks
 
 ## Editing or adding questions
 
-Open `questions_en.json` or `questions_gu.json` in any text editor. Each
+Open `src/data/questions_en.json` or `src/data/questions_gu.json` in any text editor. Each
 question is a JSON object:
 
 ```json
