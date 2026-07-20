@@ -31,6 +31,9 @@ test("wrong answer locks out further clicks and does not add score", async ({ pa
 });
 
 test("timeout hides wrong options and reveals only the correct one", async ({ page }) => {
+  // Real 36s wait for SECONDS_PER_QUESTION to elapse — one-time, not run
+  // per viewport/language like layout.spec.ts's matrix. Don't "optimize"
+  // this away; there's no test hook to fast-forward the app's own timer.
   test.setTimeout(50000);
   await startRound(page, "en");
   await page.waitForSelector("#reveal.show", { timeout: 45000 });

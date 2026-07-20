@@ -86,6 +86,7 @@ Other useful commands:
 
 ```bash
 npm test        # run the game-logic test suite
+npm run test:e2e # run the Playwright end-to-end suite against a production build
 npm run lint     # lint with ESLint
 npm run build    # type-check and produce a production build in dist/
 ```
@@ -98,8 +99,9 @@ Deployment is automatic via `.github/workflows/deploy.yml`.
 1. Go to your repo → **Settings** → **Pages** (left sidebar).
 2. Under "Build and deployment", set **Source** to **GitHub Actions**.
 
-**From then on:** every push to `main` runs lint + tests, builds the
-project, and publishes `dist/` to GitHub Pages automatically — typically
-live within a minute or two. No manual build step, no branch to upload to.
-Check the **Actions** tab on GitHub if a deploy doesn't show up; a failing
-lint or test run blocks the deploy.
+**From then on:** every push to `main` runs lint + unit tests, builds the
+project, runs the Playwright e2e suite against that build, and publishes
+`dist/` to GitHub Pages automatically — typically live within a minute or
+two. No manual build step, no branch to upload to. Check the **Actions**
+tab on GitHub if a deploy doesn't show up; a failing lint, test, or e2e
+run blocks the deploy.
