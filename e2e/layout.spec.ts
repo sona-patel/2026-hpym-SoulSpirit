@@ -23,6 +23,9 @@ for (const viewport of viewports) {
       expect(freshScreenSize.scrollHeight).toBeLessThanOrEqual(freshScreenSize.clientHeight);
 
       await answerBoth(page, 0, 1);
+      // .reveal's max-height/opacity transition is 0.3s — wait for it to
+      // settle before measuring, or boundingBox() can catch it mid-animation.
+      await page.waitForTimeout(400);
 
       const boardBox = await page.locator(".board").boundingBox();
       const revealBox = await page.locator("#reveal").boundingBox();
