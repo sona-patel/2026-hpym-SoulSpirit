@@ -21,3 +21,39 @@ export async function answerBoth(
   await page.click(`#p2-options .opt-btn:nth-child(${p2OptionIndex + 1})`);
   await page.waitForSelector("#reveal.show");
 }
+
+export async function findRoundWhereFirstOptionIsCorrect(
+  page: Page,
+  lang: Lang,
+  maxAttempts = 20,
+): Promise<void> {
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    await startRound(page, lang);
+    await page.click("#p1-options .opt-btn:nth-child(1)");
+    const isCorrect = await page
+      .locator("#p1-options .opt-btn:nth-child(1)")
+      .evaluate((el) => el.classList.contains("chosen-correct"));
+    if (isCorrect) return;
+  }
+  throw new Error(
+    `Could not find a round where the first option is correct after ${maxAttempts} attempts`,
+  );
+}
+
+export async function findRoundWhereFirstOptionIsWrong(
+  page: Page,
+  lang: Lang,
+  maxAttempts = 20,
+): Promise<void> {
+  for (let attempt = 0; attempt < maxAttempts; attempt++) {
+    await startRound(page, lang);
+    await page.click("#p1-options .opt-btn:nth-child(1)");
+    const isWrong = await page
+      .locator("#p1-options .opt-btn:nth-child(1)")
+      .evaluate((el) => el.classList.contains("chosen-wrong"));
+    if (isWrong) return;
+  }
+  throw new Error(
+    `Could not find a round where the first option is wrong after ${maxAttempts} attempts`,
+  );
+}
