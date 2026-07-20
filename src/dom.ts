@@ -142,11 +142,16 @@ function finishQuestion(state: GameState): void {
   (["p1", "p2"] as PlayerId[]).forEach((player) => {
     const container = $(`#${player}-options`);
     const buttons = container.querySelectorAll<HTMLButtonElement>(".opt-btn");
+    const timedOut = !state.answered[player];
     buttons.forEach((b, i) => {
       b.disabled = true;
-      if (i === q.correct) b.classList.add("reveal-correct");
+      if (i === q.correct) {
+        b.classList.add("reveal-correct");
+      } else if (timedOut) {
+        b.classList.add("opt-hidden");
+      }
     });
-    if (!state.answered[player]) {
+    if (timedOut) {
       $(`#${player}-status`).textContent = dict.timeUp;
     }
   });
