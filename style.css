@@ -507,7 +507,7 @@ body.on-welcome .kalash-watermark { display: none; }
 .reveal {
   width: 100%;
   flex: 0 0 auto;
-  min-height: 0;
+  max-height: 0;
   background: var(--ink-soft);
   border: 1px solid var(--line);
   border-radius: 16px;
@@ -520,15 +520,13 @@ body.on-welcome .kalash-watermark { display: none; }
   box-sizing: border-box;
   opacity: 0;
   visibility: hidden;
-  transform: translateY(6px);
   overflow: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s, min-height 0.3s ease, padding 0.3s ease;
+  transition: opacity 0.3s ease, visibility 0.3s, max-height 0.3s ease, padding 0.3s ease;
 }
 .reveal.show {
   opacity: 1;
   visibility: visible;
-  transform: translateY(0);
-  min-height: clamp(76px, 10vh, 140px);
+  max-height: 400px;
   padding: clamp(10px, 2vh, 18px) 20px;
 }
 .reveal-answer { margin: 0 0 8px; font-size: 15px; color: var(--cream-dim); }
