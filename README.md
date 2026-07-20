@@ -65,7 +65,7 @@ question is a JSON object:
 
 There are 40 starter questions in each file. To reach your target of 369,
 keep adding objects in the same shape — the game automatically works with
-however many questions are in the file, and pulls a fresh random 5 each
+however many questions are in the file, and pulls a fresh random 3 each
 round. Keep the English and Gujarati files in the same `id` order if you
 want them to stay parallel translations of each other, though this isn't
 required for the game to function.
