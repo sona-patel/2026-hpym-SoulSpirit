@@ -5,6 +5,6 @@ export default defineConfig({
   test: {
     environment: "node",
     passWithNoTests: true,
-    exclude: [...configDefaults.exclude, ".worktrees/**"],
+    exclude: [...configDefaults.exclude, ".worktrees/**", "e2e/**"],
   },
 });
