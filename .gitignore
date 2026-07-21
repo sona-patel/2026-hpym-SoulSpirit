@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.DS_Store
+*.log
+.vscode/*
+!.vscode/extensions.json
+
+# Claude Code artifacts - not for public repo
+docs/superpowers/
+.claude/
+CLAUDE.md
+
+# local git worktrees
+.worktrees/
