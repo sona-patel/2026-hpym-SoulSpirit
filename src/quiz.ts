@@ -1,6 +1,9 @@
 import type { Question } from "./types";
 
 export const QUESTIONS_PER_ROUND = 3;
+// The final question of every round is drawn from the separate "funny" bank.
+export const FUNNY_QUESTIONS_PER_ROUND = 1;
+export const MAIN_QUESTIONS_PER_ROUND = QUESTIONS_PER_ROUND - FUNNY_QUESTIONS_PER_ROUND;
 export const SECONDS_PER_QUESTION = 36;
 const BASE_SCORE = 25;
 const FIRST_CORRECT_BONUS = 20;
@@ -44,4 +47,35 @@ export function pickRoundQuestions(
   picked.forEach((q) => nextUsedIds.add(q.id));
 
   return { picked, usedIds: nextUsedIds };
+}
+
+export interface MixedRoundPick {
+  picked: Question[];
+  usedMainIds: Set<number>;
+  usedFunnyIds: Set<number>;
+}
+
+/**
+ * Builds one round's questions from two banks: the first `mainCount`
+ * questions come from `mainQuestions` (the language-specific bank), and the
+ * final `funnyCount` question(s) come from `funnyQuestions` (the shared
+ * bonus/funny bank). Each bank tracks its own "already used" ids so the two
+ * pools cycle independently.
+ */
+export function pickMixedRoundQuestions(
+  mainQuestions: Question[],
+  funnyQuestions: Question[],
+  usedMainIds: Set<number>,
+  usedFunnyIds: Set<number>,
+  mainCount: number = MAIN_QUESTIONS_PER_ROUND,
+  funnyCount: number = FUNNY_QUESTIONS_PER_ROUND,
+): MixedRoundPick {
+  const mainPick = pickRoundQuestions(mainQuestions, usedMainIds, mainCount);
+  const funnyPick = pickRoundQuestions(funnyQuestions, usedFunnyIds, funnyCount);
+
+  return {
+    picked: [...mainPick.picked, ...funnyPick.picked],
+    usedMainIds: mainPick.usedIds,
+    usedFunnyIds: funnyPick.usedIds,
+  };
 }

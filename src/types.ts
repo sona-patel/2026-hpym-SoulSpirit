@@ -13,6 +13,7 @@ export interface GameState {
   lang: Lang;
   allQuestions: Question[];
   usedIds: Set<number>;
+  usedFunnyIds: Set<number>;
   roundQuestions: Question[];
   qIndex: number;
   scores: Record<PlayerId, number>;

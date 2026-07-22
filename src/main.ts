@@ -1,8 +1,8 @@
 import type { GameState } from "./types";
 import { I18N } from "./i18n";
-import { QUESTION_BANKS } from "./data";
+import { QUESTION_BANKS, FUNNY_QUESTIONS } from "./data";
 import {
-  pickRoundQuestions,
+  pickMixedRoundQuestions,
   namesAreDuplicate,
   resolveFinalName,
   QUESTIONS_PER_ROUND,
@@ -13,6 +13,7 @@ const state: GameState = {
   lang: "en",
   allQuestions: QUESTION_BANKS.en,
   usedIds: new Set(),
+  usedFunnyIds: new Set(),
   roundQuestions: [],
   qIndex: 0,
   scores: { p1: 0, p2: 0 },
@@ -32,6 +33,7 @@ function selectLanguage(lang: "en" | "gu"): void {
   state.lang = lang;
   state.allQuestions = QUESTION_BANKS[lang];
   state.usedIds = new Set();
+  state.usedFunnyIds = new Set();
   applyI18n(state.lang);
   syncLangButtons(state.lang);
 }
@@ -90,13 +92,15 @@ $<HTMLFormElement>("#names-form").addEventListener("submit", (e) => {
 
 /* ---------- Round setup ---------- */
 function startRound(): void {
-  const { picked, usedIds } = pickRoundQuestions(
+  const { picked, usedMainIds, usedFunnyIds } = pickMixedRoundQuestions(
     state.allQuestions,
+    FUNNY_QUESTIONS,
     state.usedIds,
-    QUESTIONS_PER_ROUND,
+    state.usedFunnyIds,
   );
   state.roundQuestions = picked;
-  state.usedIds = usedIds;
+  state.usedIds = usedMainIds;
+  state.usedFunnyIds = usedFunnyIds;
   state.qIndex = 0;
   state.scores = { p1: 0, p2: 0 };
   $("#p1-score").textContent = "0";
