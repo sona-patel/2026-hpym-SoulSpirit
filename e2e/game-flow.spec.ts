@@ -7,7 +7,7 @@ import {
 } from "./helpers";
 
 test("first correct answer scores more than second correct answer", async ({ page }) => {
-  await findRoundWhereFirstOptionIsCorrect(page, "en");
+  await findRoundWhereFirstOptionIsCorrect(page);
   await page.click("#p2-options .opt-btn:nth-child(1)");
   await page.waitForSelector("#reveal.show");
 
@@ -17,7 +17,7 @@ test("first correct answer scores more than second correct answer", async ({ pag
 });
 
 test("wrong answer locks out further clicks and does not add score", async ({ page }) => {
-  await findRoundWhereFirstOptionIsWrong(page, "en");
+  await findRoundWhereFirstOptionIsWrong(page);
 
   const p1Options = page.locator("#p1-options .opt-btn");
   await expect(p1Options.first()).toBeDisabled();
@@ -32,10 +32,10 @@ test("wrong answer locks out further clicks and does not add score", async ({ pa
 
 test("timeout hides wrong options and reveals only the correct one", async ({ page }) => {
   // Real 36s wait for SECONDS_PER_QUESTION to elapse — one-time, not run
-  // per viewport/language like layout.spec.ts's matrix. Don't "optimize"
-  // this away; there's no test hook to fast-forward the app's own timer.
+  // per viewport like layout.spec.ts's matrix. Don't "optimize" this away;
+  // there's no test hook to fast-forward the app's own timer.
   test.setTimeout(50000);
-  await startRound(page, "en");
+  await startRound(page);
   await page.waitForSelector("#reveal.show", { timeout: 45000 });
 
   for (const player of ["p1", "p2"] as const) {
@@ -47,7 +47,7 @@ test("timeout hides wrong options and reveals only the correct one", async ({ pa
 });
 
 test("completes a full round and shows the results screen", async ({ page }) => {
-  await startRound(page, "en");
+  await startRound(page);
   for (let q = 0; q < 3; q++) {
     await answerBoth(page, 0, 1);
     await page.click("#next-btn");

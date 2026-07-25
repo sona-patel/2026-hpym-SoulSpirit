@@ -6,11 +6,9 @@ export interface Question {
   explanation?: string;
 }
 
-export type Lang = "en" | "gu";
 export type PlayerId = "p1" | "p2";
 
 export interface GameState {
-  lang: Lang;
   allQuestions: Question[];
   usedIds: Set<number>;
   usedFunnyIds: Set<number>;
