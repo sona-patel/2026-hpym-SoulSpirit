@@ -1,10 +1,10 @@
-import type { GameState, PlayerId, Question, Lang } from "./types";
-import { I18N } from "./i18n";
+import type { GameState, PlayerId, Question } from "./types";
+import { STRINGS } from "./i18n";
 import { calculateScore, SECONDS_PER_QUESTION, QUESTIONS_PER_ROUND } from "./quiz";
 
 export const TIMER_CIRCUMFERENCE = 175.9; // 2 * PI * r(28)
 
-export type ScreenName = "welcome" | "lang" | "names" | "quiz" | "results";
+export type ScreenName = "welcome" | "names" | "quiz" | "results";
 
 export function $<T extends Element = HTMLElement>(selector: string): T {
   const el = document.querySelector(selector);
@@ -14,7 +14,6 @@ export function $<T extends Element = HTMLElement>(selector: string): T {
 
 const screens: Record<ScreenName, HTMLElement> = {
   welcome: $("#screen-welcome"),
-  lang: $("#screen-lang"),
   names: $("#screen-names"),
   quiz: $("#screen-quiz"),
   results: $("#screen-results"),
@@ -26,26 +25,36 @@ export function showScreen(name: ScreenName): void {
   document.body.classList.toggle("on-welcome", name === "welcome");
 }
 
-export function applyI18n(lang: Lang): void {
-  const dict = I18N[lang];
+// Applies the single, static English UI dictionary to the static chrome.
+// There's no language switch to react to anymore, so this only needs to run
+// once at startup.
+export function applyI18n(): void {
   document.querySelectorAll<HTMLElement>("[data-i18n]").forEach((el) => {
-    const key = el.getAttribute("data-i18n") as keyof typeof dict | null;
-    if (key && typeof dict[key] === "string") el.textContent = dict[key] as string;
+    const key = el.getAttribute("data-i18n") as keyof typeof STRINGS | null;
+    if (key && typeof STRINGS[key] === "string") el.textContent = STRINGS[key] as string;
   });
   document.querySelectorAll<HTMLInputElement>("[data-i18n-placeholder]").forEach((el) => {
-    const key = el.getAttribute("data-i18n-placeholder") as keyof typeof dict | null;
-    if (key && typeof dict[key] === "string") el.placeholder = dict[key] as string;
+    const key = el.getAttribute("data-i18n-placeholder") as keyof typeof STRINGS | null;
+    if (key && typeof STRINGS[key] === "string") el.placeholder = STRINGS[key] as string;
   });
-  document.documentElement.lang = lang;
 }
 
-export function syncLangButtons(lang: Lang): void {
-  document.querySelectorAll<HTMLElement>(".lang-btn").forEach((b) => {
-    b.classList.toggle("active", b.dataset.lang === lang);
-  });
-  document.querySelectorAll<HTMLElement>(".mini-lang-btn").forEach((b) => {
-    b.classList.toggle("active", b.dataset.lang === lang);
-  });
+// Bilingual question/option text is stored as "English\nGujarati". Plain,
+// untranslated text (the funny/bonus question) has no newline and is
+// rendered as-is.
+function renderBilingualInto(el: HTMLElement, text: string, guClass: string): void {
+  el.innerHTML = "";
+  const lines = text.split("\n");
+  if (lines.length < 2) {
+    el.textContent = text;
+    return;
+  }
+  const [en, ...rest] = lines;
+  el.appendChild(document.createTextNode(en));
+  const guSpan = document.createElement("span");
+  guSpan.className = guClass;
+  guSpan.textContent = rest.join("\n");
+  el.appendChild(guSpan);
 }
 
 function buildOptions(state: GameState, player: PlayerId, q: Question): void {
@@ -54,7 +63,7 @@ function buildOptions(state: GameState, player: PlayerId, q: Question): void {
   q.options.forEach((opt, idx) => {
     const btn = document.createElement("button");
     btn.className = "opt-btn";
-    btn.textContent = opt;
+    renderBilingualInto(btn, opt, "opt-line-gu");
     btn.addEventListener("click", () => handleAnswer(state, player, idx, q));
     container.appendChild(btn);
   });
@@ -69,7 +78,7 @@ export function renderQuestion(state: GameState): void {
   const q = state.roundQuestions[state.qIndex];
   $("#q-index").textContent = String(state.qIndex + 1);
   $("#progress-fill").style.width = `${(state.qIndex / QUESTIONS_PER_ROUND) * 100}%`;
-  $("#question-text").textContent = q.question;
+  renderBilingualInto($("#question-text"), q.question, "q-line-gu");
   $("#reveal").classList.remove("show");
   $("#timer-num").textContent = String(state.timeLeft);
 
@@ -112,7 +121,7 @@ function handleAnswer(state: GameState, player: PlayerId, idx: number, q: Questi
     if (i === idx) b.classList.add(idx === q.correct ? "chosen-correct" : "chosen-wrong");
   });
 
-  const dict = I18N[state.lang];
+  const dict = STRINGS;
   const statusEl = $(`#${player}-status`);
   const isCorrect = idx === q.correct;
 
@@ -137,7 +146,7 @@ function handleAnswer(state: GameState, player: PlayerId, idx: number, q: Questi
 function finishQuestion(state: GameState): void {
   if (state.timer !== null) clearInterval(state.timer);
   const q = state.roundQuestions[state.qIndex];
-  const dict = I18N[state.lang];
+  const dict = STRINGS;
 
   (["p1", "p2"] as PlayerId[]).forEach((player) => {
     const container = $(`#${player}-options`);
@@ -156,8 +165,8 @@ function finishQuestion(state: GameState): void {
     }
   });
 
-  $("#reveal-answer-text").textContent = q.options[q.correct];
-  $("#reveal-explain").textContent = q.explanation ?? "";
+  renderBilingualInto($("#reveal-answer-text"), q.options[q.correct], "opt-line-gu");
+  renderBilingualInto($("#reveal-explain"), q.explanation ?? "", "opt-line-gu");
   $("#reveal").classList.add("show");
   $("#progress-fill").style.width = `${((state.qIndex + 1) / QUESTIONS_PER_ROUND) * 100}%`;
 }
@@ -167,7 +176,7 @@ export function showResults(state: GameState): void {
   $("#result-p1-score").textContent = String(state.scores.p1);
   $("#result-p2-score").textContent = String(state.scores.p2);
 
-  const dict = I18N[state.lang];
+  const dict = STRINGS;
   let line: string;
   if (state.scores.p1 === state.scores.p2) {
     line = dict.winnerTie;

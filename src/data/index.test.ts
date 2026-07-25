@@ -1,24 +1,37 @@
 import { describe, it, expect } from "vitest";
-import { QUESTION_BANKS } from "./index";
+import { QUESTIONS, FUNNY_QUESTIONS } from "./index";
 
-describe("QUESTION_BANKS", () => {
-  it("has non-empty en and gu banks", () => {
-    expect(QUESTION_BANKS.en.length).toBeGreaterThan(0);
-    expect(QUESTION_BANKS.gu.length).toBeGreaterThan(0);
+describe("QUESTIONS (bilingual)", () => {
+  it("is non-empty", () => {
+    expect(QUESTIONS.length).toBeGreaterThan(0);
   });
 
   it("every question has 4 options and a valid correct index", () => {
-    for (const bank of [QUESTION_BANKS.en, QUESTION_BANKS.gu]) {
-      for (const q of bank) {
-        expect(q.options).toHaveLength(4);
-        expect([0, 1, 2, 3]).toContain(q.correct);
-      }
+    for (const q of QUESTIONS) {
+      expect(q.options).toHaveLength(4);
+      expect([0, 1, 2, 3]).toContain(q.correct);
     }
   });
 
-  it("en and gu banks have matching id sets", () => {
-    const enIds = new Set(QUESTION_BANKS.en.map((q) => q.id));
-    const guIds = new Set(QUESTION_BANKS.gu.map((q) => q.id));
-    expect(enIds).toEqual(guIds);
+  it("every question and option contains both an English and a Gujarati line", () => {
+    const gujaratiPattern = /[\u0A80-\u0AFF]/;
+    for (const q of QUESTIONS) {
+      expect(q.question).toContain("\n");
+      expect(gujaratiPattern.test(q.question)).toBe(true);
+      for (const opt of q.options) {
+        expect(opt).toContain("\n");
+        expect(gujaratiPattern.test(opt)).toBe(true);
+      }
+    }
+  });
+});
+
+describe("FUNNY_QUESTIONS", () => {
+  it("is non-empty and left as single-language (not bilingual-merged)", () => {
+    expect(FUNNY_QUESTIONS.length).toBeGreaterThan(0);
+    for (const q of FUNNY_QUESTIONS) {
+      expect(q.options).toHaveLength(4);
+      expect([0, 1, 2, 3]).toContain(q.correct);
+    }
   });
 });

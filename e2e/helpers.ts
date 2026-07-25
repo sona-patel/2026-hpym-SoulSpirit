@@ -1,11 +1,8 @@
 import type { Page } from "@playwright/test";
 
-export type Lang = "en" | "gu";
-
-export async function startRound(page: Page, lang: Lang): Promise<void> {
+export async function startRound(page: Page): Promise<void> {
   await page.goto("/");
   await page.click("#ready-btn");
-  await page.click(`.lang-btn[data-lang="${lang}"]`);
   await page.fill("#p1-name", "Player One");
   await page.fill("#p2-name", "Player Two");
   await page.click('#names-form button[type="submit"]');
@@ -24,11 +21,10 @@ export async function answerBoth(
 
 export async function findRoundWhereFirstOptionIsCorrect(
   page: Page,
-  lang: Lang,
   maxAttempts = 20,
 ): Promise<void> {
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    await startRound(page, lang);
+    await startRound(page);
     await page.click("#p1-options .opt-btn:nth-child(1)");
     const isCorrect = await page
       .locator("#p1-options .opt-btn:nth-child(1)")
@@ -42,11 +38,10 @@ export async function findRoundWhereFirstOptionIsCorrect(
 
 export async function findRoundWhereFirstOptionIsWrong(
   page: Page,
-  lang: Lang,
   maxAttempts = 20,
 ): Promise<void> {
   for (let attempt = 0; attempt < maxAttempts; attempt++) {
-    await startRound(page, lang);
+    await startRound(page);
     await page.click("#p1-options .opt-btn:nth-child(1)");
     const isWrong = await page
       .locator("#p1-options .opt-btn:nth-child(1)")

@@ -1,17 +1,16 @@
 import type { GameState } from "./types";
-import { I18N } from "./i18n";
-import { QUESTION_BANKS, FUNNY_QUESTIONS } from "./data";
+import { STRINGS } from "./i18n";
+import { QUESTIONS, FUNNY_QUESTIONS } from "./data";
 import {
   pickMixedRoundQuestions,
   namesAreDuplicate,
   resolveFinalName,
   QUESTIONS_PER_ROUND,
 } from "./quiz";
-import { $, showScreen, applyI18n, syncLangButtons, renderQuestion, showResults } from "./dom";
+import { $, showScreen, applyI18n, renderQuestion, showResults } from "./dom";
 
 const state: GameState = {
-  lang: "en",
-  allQuestions: QUESTION_BANKS.en,
+  allQuestions: QUESTIONS,
   usedIds: new Set(),
   usedFunnyIds: new Set(),
   roundQuestions: [],
@@ -25,34 +24,7 @@ const state: GameState = {
 };
 
 /* ---------- Welcome ---------- */
-$("#ready-btn").addEventListener("click", () => showScreen("lang"));
-$("#back-to-welcome").addEventListener("click", () => showScreen("welcome"));
-
-/* ---------- Language selection ---------- */
-function selectLanguage(lang: "en" | "gu"): void {
-  state.lang = lang;
-  state.allQuestions = QUESTION_BANKS[lang];
-  state.usedIds = new Set();
-  state.usedFunnyIds = new Set();
-  applyI18n(state.lang);
-  syncLangButtons(state.lang);
-}
-
-document.querySelectorAll<HTMLElement>(".lang-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const lang = btn.dataset.lang as "en" | "gu";
-    selectLanguage(lang);
-    showScreen("names");
-  });
-});
-
-document.querySelectorAll<HTMLElement>(".mini-lang-btn").forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const lang = btn.dataset.lang as "en" | "gu";
-    if (lang === state.lang) return;
-    selectLanguage(lang);
-  });
-});
+$("#ready-btn").addEventListener("click", () => showScreen("names"));
 
 /* ---------- Names ---------- */
 function clearNameError(): void {
@@ -67,10 +39,9 @@ $<HTMLFormElement>("#names-form").addEventListener("submit", (e) => {
   e.preventDefault();
   const p1Input = $<HTMLInputElement>("#p1-name");
   const p2Input = $<HTMLInputElement>("#p2-name");
-  const dict = I18N[state.lang];
 
-  const p1Final = resolveFinalName(p1Input.value, dict.p1Placeholder);
-  const p2Final = resolveFinalName(p2Input.value, dict.p2Placeholder);
+  const p1Final = resolveFinalName(p1Input.value, STRINGS.p1Placeholder);
+  const p2Final = resolveFinalName(p2Input.value, STRINGS.p2Placeholder);
 
   if (namesAreDuplicate(p1Final, p2Final)) {
     $("#name-error").classList.add("show");
@@ -121,10 +92,8 @@ $("#next-btn").addEventListener("click", () => {
 
 /* ---------- Results ---------- */
 $("#play-again-btn").addEventListener("click", () => showScreen("welcome"));
-$("#change-lang-btn").addEventListener("click", () => showScreen("lang"));
 $("#stop-btn").addEventListener("click", () => showScreen("welcome"));
 
 /* ---------- init ---------- */
-applyI18n(state.lang);
-syncLangButtons(state.lang);
+applyI18n();
 document.body.classList.add("on-welcome");
